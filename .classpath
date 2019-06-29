@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resource"/>
+	<classpathentry kind="lib" path="/Lib/api/PlaceholderAPI.jar"/>
+	<classpathentry kind="lib" path="/Lib/api/ProtocolLib.jar"/>
+	<classpathentry kind="lib" path="/Lib/plugin/ChestCommands.jar"/>
+	<classpathentry kind="lib" path="/Lib/annotation/allatori-annotations.jar"/>
+	<classpathentry kind="lib" path="/Lib/annotation/lombok.jar" sourcepath="C:/Users/ADMINI~1/AppData/Local/Temp/.org.sf.feeling.decompiler1500885993794/source/lombok-1.16.18-sources.jar"/>
+	<classpathentry kind="lib" path="/Lib/forge/Thermos-1.7.10-1614-server.jar"/>
+	<classpathentry kind="lib" path="/Lib/api/Vault-1.6.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,17 @@
+name: ChestCommandsPro
+main: com.blzeecraft.chestcommandsPro.ChestCommandsPro
+version: 1.1.0-dev
+softdepend: [PlaceHolderAPI, ProtocolLib]
+depend: [ChestCommands]
+
+commands:
+ chestcommandspro:
+    description: Main command for ChestCommandsPro.
+    usage: /<command> <reload/info/menu>
+    aliases: [ccp]
+    permission: chestcommandspro.admin
+
+permissions:
+  chestcommandspro.admin:
+    description: Gives access to all chestcommandspro commands
+    default: op
