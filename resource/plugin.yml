@@ -2,6 +2,7 @@ name: ChestCommandsPro
 main: com.blzeecraft.chestcommandsPro.ChestCommandsPro
 version: 1.1.0-dev
 softdepend: [PlaceHolderAPI, ProtocolLib]
+api-version: 1.13
 depend: [ChestCommands]
 
 commands:
