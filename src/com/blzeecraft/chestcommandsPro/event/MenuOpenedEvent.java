@@ -21,12 +21,10 @@ public class MenuOpenedEvent extends PlayerEvent {
 	}
 
 	@Override
-	@DoNotRename
 	public HandlerList getHandlers() {
 		return handlers;
 	}
 
-	@DoNotRename
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}
@@ -37,7 +35,6 @@ public class MenuOpenedEvent extends PlayerEvent {
 	 * 获得玩家打开的菜单
 	 * @return 玩家打开的菜单
 	 */
-	@DoNotRename
 	public IconMenu getMenu() {
 		return menu;
 	}

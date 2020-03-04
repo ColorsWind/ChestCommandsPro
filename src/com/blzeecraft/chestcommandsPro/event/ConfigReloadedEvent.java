@@ -20,7 +20,6 @@ public class ConfigReloadedEvent extends PluginEvent {
 		return handlers;
 	}
 
-	@DoNotRename
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}

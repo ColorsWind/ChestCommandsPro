@@ -9,11 +9,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 
 import com.blzeecraft.chestcommandsPro.ChestCommandsPro;
+import com.blzeecraft.chestcommandsPro.PlayerPointsBridge;
 import com.blzeecraft.chestcommandsPro.event.IClickHandler;
 
 import com.gmail.filoghost.chestcommands.api.ClickHandler;
 import com.gmail.filoghost.chestcommands.bridge.EconomyBridge;
-import com.gmail.filoghost.chestcommands.bridge.PlayerPointsBridge;
 import com.gmail.filoghost.chestcommands.config.AsciiPlaceholders;
 import com.gmail.filoghost.chestcommands.exception.FormatException;
 import com.gmail.filoghost.chestcommands.internal.CommandsClickHandler;
@@ -37,6 +37,7 @@ public class OverrideIcon extends ExtendedIcon implements Comparable<OverrideIco
 	private final int order;
 	private int vMoney;
 	private int vPoint;
+	private int playerPointsPrice;
 	private String vPerm;
 	private String nbt;
 

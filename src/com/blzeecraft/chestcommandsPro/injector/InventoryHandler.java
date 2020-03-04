@@ -14,11 +14,11 @@ import com.gmail.filoghost.chestcommands.internal.CommandsClickHandler;
 import com.gmail.filoghost.chestcommands.internal.MenuInventoryHolder;
 import com.gmail.filoghost.chestcommands.listener.InventoryListener;
 
-import gnu.trove.map.TObjectLongMap;
-import gnu.trove.map.hash.TObjectLongHashMap;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -31,12 +31,12 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.InventoryHolder;
 
 public class InventoryHandler implements Listener {
-	private final TObjectLongMap<Player> antiSpam;
+	private final Map<Player, Long> antiSpam;
 	private final InventoryListener listener;
 	private Field f;
 
 	public InventoryHandler(ChestCommandsPro pro, InventoryListener listener) {
-		antiSpam = new TObjectLongHashMap<>();
+		antiSpam = new HashMap<>();
 		this.listener = listener;
 		try {
 			Class<?> clazz = Class.forName("com.gmail.filoghost.chestcommands.internal.CommandsClickHandler");
@@ -104,7 +104,7 @@ public class InventoryHandler implements Listener {
 
 	private boolean isSpam(Player clicker) {
 		long current = System.currentTimeMillis();
-		if (antiSpam.get(clicker) - current >= Settings.antiSpam) {
+		if (antiSpam.getOrDefault(clicker, 0L) - current >= Settings.antiSpam) {
 			antiSpam.put(clicker, current);
 			return true;
 		}

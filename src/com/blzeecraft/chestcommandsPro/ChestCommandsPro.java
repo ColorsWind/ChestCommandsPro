@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration; 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.allatori.annotations.DoNotRename;
 import com.blzeecraft.chestcommandsPro.bound.BoundConfig;
 import com.blzeecraft.chestcommandsPro.bound.BoundHandler;
 import com.blzeecraft.chestcommandsPro.builder.MenuBuilder;
@@ -18,7 +17,6 @@ import com.gmail.filoghost.chestcommands.ChestCommands;
 import lombok.Getter;
 
 @Getter
-@DoNotRename 
 public class ChestCommandsPro extends JavaPlugin {
 
 
@@ -38,6 +36,9 @@ public class ChestCommandsPro extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance = this;
+		if (PlayerPointsBridge.setupPlugin()) {
+			this.getLogger().info("找到 PlayerPoints.");
+		}
 		chestCommands = JavaPlugin.getPlugin(ChestCommands.class);
 		initConfig();
 		menuManager = new MenuManager(this, chestCommands);
