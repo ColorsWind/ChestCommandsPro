@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.TreeSet;
+import java.util.regex.Pattern;
 
+import com.blzeecraft.chestcommandsPro.utils.Fallback;
+import com.gmail.filoghost.chestcommands.ChestCommands;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -56,7 +59,7 @@ public class ExtendIconPro extends ExtendedIcon implements IClickHandler {
 	@Override
 	public ItemStack createItemstack(Player pov) {
 		OverrideIcon o = this.getOverrideIcon(pov);
-		ItemStack item = null;
+		ItemStack item;
 		if (o == null) {
 			item = super.createItemstack(pov);
 		} else {
@@ -155,12 +158,14 @@ public class ExtendIconPro extends ExtendedIcon implements IClickHandler {
 						}
 					}
 				} else {
-					commands.addAll(CommandSerializer.readCommands(section.getString(path)));
+					commands.addAll(Fallback.readCommands(section.getString(path)));
 				}
 				this.clickHandlers.put(type, new CommandsClickHandler(commands, closeOnClick));
 			}
 		}
 	}
+
+
 
 	
 	private void readPapi(ConfigurationSection section) {
