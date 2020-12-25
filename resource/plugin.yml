@@ -1,6 +1,6 @@
 name: ChestCommandsPro
 main: com.blzeecraft.chestcommandsPro.ChestCommandsPro
-version: 1.1.0-dev
+version: maven-version
 softdepend: [PlaceHolderAPI, ProtocolLib]
 api-version: 1.13
 depend: [ChestCommands]
